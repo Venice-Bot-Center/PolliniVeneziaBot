@@ -3,11 +3,10 @@ import logging
 from rich.logging import RichHandler
 
 from pollinivenezianibot.db_istance import DBIstance
-from pollinivenezianibot.telegram_api import (
-    telegram_channel_delete_message,
-    telegram_channel_send,
-)
-from pollinivenezianibot.utils import get_printed_data, hashed
+from pollinivenezianibot.telegram_api import telegram_channel_delete_message
+from pollinivenezianibot.telegram_api import telegram_channel_send
+from pollinivenezianibot.utils import get_printed_data
+from pollinivenezianibot.utils import hashed
 
 FORMAT = "%(message)s"
 logging.basicConfig(

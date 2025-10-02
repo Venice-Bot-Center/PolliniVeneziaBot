@@ -1,6 +1,6 @@
-import os
-from typing import Tuple, Union
 import logging
+import os
+
 import requests
 from rich.logging import RichHandler
 
@@ -14,7 +14,7 @@ logging.basicConfig(
 log = logging.getLogger("rich")
 
 
-def telegram_send(text: str, user: str) -> Union[Tuple[int, bool], Tuple[None, bool]]:
+def telegram_send(text: str, user: str) -> tuple[int, bool] | tuple[None, bool]:
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
     message = {
         "chat_id": user,
@@ -28,7 +28,7 @@ def telegram_send(text: str, user: str) -> Union[Tuple[int, bool], Tuple[None, b
     return None, False
 
 
-def telegram_channel_send(text: str) -> Tuple[int, bool]:
+def telegram_channel_send(text: str) -> tuple[int, bool]:
     return telegram_send(text, CHANNEL)
 
 

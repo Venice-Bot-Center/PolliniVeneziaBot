@@ -1,7 +1,6 @@
 import datetime
 import logging
 from functools import cmp_to_key
-from typing import List, Tuple
 
 import requests
 from rich.logging import RichHandler
@@ -66,7 +65,7 @@ def get_level(limits: list, number: float = 0.0) -> (str, str):
     return "🔴", "High"
 
 
-def get_printed_data() -> List[Tuple[str, str, str]]:
+def get_printed_data() -> list[tuple[str, str, str]]:
     dati = get_dati_continui()
     pollini = get_pollini()
     out = []
@@ -87,7 +86,7 @@ def get_printed_data() -> List[Tuple[str, str, str]]:
     return out
 
 
-def hashed(input_data: List[Tuple[str, str, str]]):
+def hashed(input_data: list[tuple[str, str, str]]):
     out = ""
     for a, b, c in input_data:
         out += f"{a}{b}{c}"

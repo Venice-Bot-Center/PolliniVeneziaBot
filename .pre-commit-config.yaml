@@ -1,29 +1,75 @@
 fail_fast: true
 repos:
-    - repo: https://github.com/pre-commit/pre-commit-hooks
-      rev: v3.4.0
+    - repo: https://github.com/tillig/json-sort-cli
+      rev: v3.0.0 # Use a version tag or SHA commit hash
       hooks:
-          - id: check-toml
-          - id: check-yaml
-          - id: check-json
-          - id: check-xml
-          - id: pretty-format-json
-            args: ["--autofix"]
-          - id: end-of-file-fixer
-          - id: requirements-txt-fixer
-          - id: end-of-file-fixer
-          - id: trailing-whitespace
-            language: python
-    - repo: https://github.com/ambv/black
-      rev: 20.8b1
+          - id: json-sort
+            args:
+                - --autofix
+    - repo: https://github.com/pappasam/toml-sort.git
+      rev: v0.24.3
+      hooks:
+          - id: toml-sort-fix
+
+    - repo: https://github.com/asottile/reorder-python-imports
+      rev: v3.15.0
+      hooks:
+          - id: reorder-python-imports
+    - repo: https://github.com/adamchainz/djade-pre-commit
+      rev: "1.6.0" # Replace with the latest tag on GitHub
+      hooks:
+          - id: djade
+            args: [--target-version, "4.2"] # Replace with Django version
+    - repo: https://github.com/PyCQA/autoflake
+      rev: v2.3.1
+      hooks:
+          - id: autoflake
+            args: [--remove-all-unused-imports, --in-place]
+    - repo: https://github.com/pycqa/bandit
+      rev: 1.8.6
+      hooks:
+          - id: bandit
+            args: ["-iii", "-ll"]
+    - repo: https://github.com/psf/black
+      rev: 25.9.0
       hooks:
           - id: black
-            language_version: python3.8
-    - repo: https://gitlab.com/pycqa/flake8
-      rev: 3.9.0
+            language_version: python3.9
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v6.0.0
+      hooks:
+          - id: check-merge-conflict
+          - id: detect-private-key
+          - id: check-symlinks
+          - id: check-toml
+          - id: check-xml
+          - id: check-yaml
+          - id: forbid-new-submodules
+          - id: mixed-line-ending
+          - id: trailing-whitespace
+            language: python
+    - repo: https://github.com/pre-commit/pygrep-hooks
+      rev: v1.10.0 # Use the ref you want to point at
+      hooks:
+          - id: python-no-eval
+          - id: python-no-log-warn
+          - id: python-use-type-annotations
+    - repo: https://github.com/asottile/pyupgrade
+      rev: v3.20.0
+      hooks:
+          - id: pyupgrade
+            args: [--py312-plus]
+    - repo: https://github.com/PyCQA/flake8
+      rev: 7.3.0
       hooks:
           - id: flake8
-    - repo: https://github.com/asottile/blacken-docs
-      rev: v1.10.0
-      hooks:
-          - id: blacken-docs
+            additional_dependencies:
+                [
+                    "flake8-blind-except",
+                    "flake8-docstrings",
+                    "flake8-bugbear",
+                    "flake8-comprehensions",
+                    "flake8-docstrings",
+                    "flake8-implicit-str-concat",
+                    "pydocstyle>=5.0.0",
+                ]

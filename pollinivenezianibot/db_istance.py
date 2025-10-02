@@ -1,4 +1,5 @@
 import os
+
 import pyrebase
 
 API_KEY = os.environ["FBKEY"]

@@ -1,0 +1,17 @@
+[dependency-groups]
+dev = ["pre-commit>=4.3.0", "pylint>=3.3.8"]
+
+[project]
+name = "polliniveneziabot"
+version = "1.0.0a1"
+description = "Add your description here"
+requires-python = ">=3.12"
+readme = "README.md"
+dependencies = ["beautifulsoup4>=4.14.2", "requests>=2.25.1"]
+
+[tool.uv]
+package = false
+
+[[tool.uv.index]]
+name = "pypi"
+url = "https://pypi.org/simple"

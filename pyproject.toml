@@ -7,7 +7,54 @@ version = "1.0.0a1"
 description = "Add your description here"
 requires-python = ">=3.12"
 readme = "README.md"
-dependencies = ["beautifulsoup4>=4.14.2", "requests>=2.25.1"]
+dependencies = ["beautifulsoup4>=4.14.2", "requests>=2.25.1", "rich>=14.1.0"]
+
+[project.entry-points.dotenv]
+ignore = "false"
+location = ".env"
+
+[tool.black]
+line-length = 79
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+
+[tool.ruff]
+# Set the maximum line length to 79.
+line-length = 79
+
+[tool.ruff.lint]
+# Add the `line-too-long` rule to the enforced rule set. By default, Ruff omits rules that
+# overlap with the use of a formatter, like Black, but we can override this behavior by
+# explicitly adding the rule.
+extend-select = [
+  "E501",
+  "UP" # pyupgrade
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.skjold]
+sources = ["pyup", "gemnasium"] # Sources to check against.
+report_only = true # Report only, always exit with zero.
+cache_dir = '.skylt_cache' # Cache location (default: `~/.skjold/cache`).
+cache_expires = 86400 # Cache max. age.
+verbose = true # Be verbose.
 
 [tool.uv]
 package = false

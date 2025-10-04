@@ -2,8 +2,7 @@ import logging
 
 from rich.logging import RichHandler
 
-from pollinivenezianibot.telegram_api import telegram_send
-from pollinivenezianibot.utils import get_printed_data
+from pollinivenezianibot.telegram_api import sender_message
 
 FORMAT = "%(message)s"
 logging.basicConfig(
@@ -14,8 +13,7 @@ log = logging.getLogger("rich")
 
 
 def main():
-    telegram_send("Hello from polliniveneziabot!")
-    logging.info(get_printed_data())
+    logging.info(sender_message())
 
 
 if __name__ == "__main__":

@@ -340,19 +340,20 @@
         },
         "protobuf": {
             "hashes": [
-                "sha256:0a81e3cf8e9b719c202f51262490d89a340cbdc09bd61a1aa7a3d169ffc64f9f",
-                "sha256:167a5d0054104f42a787ff468df0c2da4d333bb42889a279c1b6d668490637df",
-                "sha256:30255d66ae2871809662d5ef1b4773535233f38b700377d871e7a2aa4803505e",
-                "sha256:7ae840bd1228c2caee19f39095f6e0ec58127c66aea95925fef11440e2ea55c1",
-                "sha256:833ee6da7fb81201020f744fea3377de0e08addd5f5b350ab34e9ffc89cf4f10",
-                "sha256:a8dd991431cdf8a2f281f6dc0d796b4136383078658d5b8f4488c01791a1ce03",
-                "sha256:d1cfe9f9870600f80eff0b4df302cd0109007e36f4c7d824733468617dae0843",
-                "sha256:d71b32b12484c0f1babee49b500d9ff707da5fc5dd056d68914d811ac6233acf",
-                "sha256:dae2bda7cba5c3ea981c29a83580c1356bb78e7d4a3617a242e8fa227968e32d",
-                "sha256:f3c5d8cd10a9dd1f44aa6b81647595c2dcee1c2f81f1f90c16a2944b88153026"
+                "sha256:3093804752167bcab3998bec9f1048baae6e29505adaf1afd14a37bddede533c",
+                "sha256:69915a973dd0f60f31a08b8318b73eab2bd6a392c79184b3612226b0a3f8ec02",
+                "sha256:6ddcac2a081f8b7b9642c09406bc6a4290128fce5f471cddd165960bb9119e5c",
+                "sha256:8afa18e1d6d20af15b417e728e9f60f3aa108ee76f23c3b2c07a2c3b546d3afd",
+                "sha256:8f04fa32763dcdb4973d537d6b54e615cc61108c7cb38fe59310c3192d29510a",
+                "sha256:9b71e0281f36f179d00cbcb119cb19dec4d14a81393e5ea220f64b286173e190",
+                "sha256:a3157e62729aafb8df6da2c03aa5c0937c7266c626ce11a278b6eb7963c4e37c",
+                "sha256:a5cb85982d95d906df1e2210e58f8e4f1e3cdc088e52c921a041f9c9a0386de5",
+                "sha256:cbf16ba3350fb7b889fca858fb215967792dc125b35c7976ca4818bee3521cf0",
+                "sha256:d71b040839446bac0f4d162e758bea99c8251161dae9d0983a3b88dee345153b"
             ],
+            "index": "pypi",
             "markers": "python_version >= '3.9'",
-            "version": "==6.33.0rc1"
+            "version": "==6.33.5"
         },
         "pyasn1": {
             "hashes": [

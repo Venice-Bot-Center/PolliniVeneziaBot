@@ -1,0 +1,39 @@
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+  "pytest",
+  "pylint",
+  "autopep8",
+  "rope",
+  "safety",
+  "flake8"
+]
+
+[project]
+name = "polliniveneziabot"
+version = "0.1.0"
+description = "Add your description here"
+authors = [{name = "Fundor333", email = "fundor333@fundor333.com"}]
+requires-python = ">=3.12"
+readme = "README.md"
+dependencies = [
+  "apscheduler>=3.11.3",
+  "beautifulsoup4>=4.15.0",
+  "pyrebase4>=4.9.0",
+  "requests>=2.34.2",
+  "rich>=15.0.0"
+]
+
+[project.scripts]
+polliniveneziabot = "polliniveneziabot:main"
+
+[tool.uv]
+package = false
+default-groups = "all"
+
+[[tool.uv.index]]
+name = "pypi"
+url = "https://pypi.org/simple"
